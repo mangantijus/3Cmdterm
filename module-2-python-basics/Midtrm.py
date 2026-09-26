@@ -13,9 +13,8 @@ def display_menu():
         num = input("Choose a number: ")
         return num
     # print the menu, return the user's choice
-pass 
 
-def add_pet(pet_list):
+def add_pet(pets):
 
     name =input("Name of Pet: ")
     animal = input("What type of animal: ")
@@ -27,37 +26,47 @@ def add_pet(pet_list):
     print(result)
    
     # ask for name, animal type, status — build the string, add to the list
-    pass
 
-def view_pets(pet_list):
+
+def view_pets(pets):
 
     for i in range(len(pets)):
          print(pets[i])
 
     # loop through and print every pet — handle empty list
-    pass
+    
 
-def count_available_adopted(pet_list):
+def count_available_adopted(pets):
     Available_pet = 0
     Adopted_pet = 0
+    for b in pets:
+         if "available" in b:
+              Available_pet +=1
+         elif "adopted" in b:
+              Adopted_pet +=1
+    print(f"Available_pet : {Available_pet}")
+    print(f"Adopted_pet : {Adopted_pet}")
+
 
     
     # loop through, count Available vs Adopted, return both
-    pass
+    
 
-def find_pet(pet_list):
+def find_pet(pets):
     pname = input("what is the name of the pet: ")
         
 
     # ask for a name, search the list, print result or "not found"
-    pass
+    
 
 # BONUS (optional)
-def remove_pet(pet_list):
+def remove_pet(pets):
     rem = input("What name of the pet you want to remove: ")
-    pets.remove(rem)
-pass
-
+    for b in pets:
+         if rem in b:
+            pets.remove(b)
+      
+      
 def main():
     running = True
     while running:
